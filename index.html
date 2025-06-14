@@ -1,17 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ViralYou.in</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Viralyou Insta Store</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; background: #f7f7f7; }
-    h1 { font-size: 3rem; color: #333; }
-    p { font-size: 1.2rem; color: #666; max-width: 500px; margin: auto; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      background-color: #000;
+    }
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .floating-icon {
+      position: absolute;
+      font-size: 1.5rem;
+      color: #fff;
+      opacity: 0.4;
+      animation: float 12s linear infinite;
+    }
+    @keyframes float {
+      from { transform: translateY(100vh) rotate(0deg); }
+      to { transform: translateY(-10vh) rotate(360deg); }
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      z-index: 10;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 5;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+      margin: 10px 0;
+      color: #222;
+    }
+    .card p {
+      font-size: 1.2em;
+      color: #444;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #128C7E;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 15px;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to ViralYou.in 🚀</h1>
-  <p>This site is under construction. Stay tuned for something amazing!</p>
+
+<div class="background">
+  <div class="floating-icon" style="left: 10%; animation-delay: 0s;">❤️</div>
+  <div class="floating-icon" style="left: 30%; animation-delay: 3s;">💬</div>
+  <div class="floating-icon" style="left: 50%; animation-delay: 1.5s;">🔁</div>
+  <div class="floating-icon" style="left: 70%; animation-delay: 2s;">❤️</div>
+  <div class="floating-icon" style="left: 85%; animation-delay: 4s;">💬</div>
+</div>
+
+<header>
+  <h1>Viralyou Insta Boost Store 🚀</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h3>1000 Followers</h3>
+    <p>₹180</p>
+    <a class="btn" href="https://wa.me/917999446165?text=I%20want%20to%20buy%201000%20Followers%20for%20Rs180" target="_blank">Buy Now</a>
+  </div>
+  <div class="card">
+    <h3>5000 Views</h3>
+    <p>₹10</p>
+    <a class="btn" href="https://wa.me/917999446165?text=I%20want%20to%20buy%205000%20Views%20for%20Rs10" target="_blank">Buy Now</a>
+  </div>
+  <div class="card">
+    <h3>2 Comments</h3>
+    <p>₹20</p>
+    <a class="btn" href="https://wa.me/917999446165?text=I%20want%20to%20buy%202%20Comments%20for%20Rs20" target="_blank">Buy Now</a>
+  </div>
+  <div class="card">
+    <h3>100 Likes</h3>
+    <p>₹20</p>
+    <a class="btn" href="https://wa.me/917999446165?text=I%20want%20to%20buy%20100%20Likes%20for%20Rs20" target="_blank">Buy Now</a>
+  </div>
+  <div class="card">
+    <h3>100 Shares</h3>
+    <p>₹20</p>
+    <a class="btn" href="https://wa.me/917999446165?text=I%20want%20to%20buy%20100%20Shares%20for%20Rs20" target="_blank">Buy Now</a>
+  </div>
+</div>
+
 </body>
 </html>
