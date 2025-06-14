@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +13,22 @@
       color: #333;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
     header {
       background-color: #000;
       color: #fff;
       padding: 1.5rem;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
     .container {
       max-width: 800px;
       margin: 2rem auto;
       padding: 1rem;
+      position: relative;
+      z-index: 2;
     }
     .service {
       background: #fff;
@@ -58,10 +64,43 @@
       margin: 2rem 0;
       color: #666;
       font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .emoji-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
+
+<div class="emoji-bg" id="emoji-bg"></div>
 
 <header>
   <h1>VIRALYOU - Insta Boost Services</h1>
@@ -106,17 +145,34 @@
     <a class="btn" href="https://wa.me/917988446165?text=I%20want%20to%20buy%20100%20shares">Buy</a>
   </div>
 
-  <div class="service">
-    <h2>1000 Reel Views Demo</h2>
-    <span class="price">Free</span>
-    <a class="btn" href="https://wa.me/917988446165?text=I%20want%20to%20get%20a%20demo%20of%201000%20Reel%20Views">Demo</a>
-  </div>
+  
 
 </div>
 
 <footer>
   &copy; 2025 Viralyou. All rights reserved.
 </footer>
+
+<script>
+  const emojis = ["❤️", "📈", "👥", "🔥", "💬", "📢", "👍"];
+  const bg = document.getElementById("emoji-bg");
+
+  function createEmoji() {
+    const el = document.createElement("div");
+    el.className = "emoji";
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = 5 + Math.random() * 5 + "s";
+    el.style.fontSize = (1 + Math.random() * 1.5) + "rem";
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    bg.appendChild(el);
+
+    setTimeout(() => {
+      bg.removeChild(el);
+    }, 10000);
+  }
+
+  setInterval(createEmoji, 500);
+</script>
 
 </body>
 </html>
